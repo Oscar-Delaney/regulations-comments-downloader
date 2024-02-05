@@ -25,8 +25,8 @@
 
 ###############################################################
 # SET THESE VALUES!
-api_key = "DEMO_KEY"
-baseFolder_path = "/path/to/folder/"
+api_key = "HRkDVb88EzyfxmuTKf005mjYLhj3RMCAf82MG9UF"
+baseFolder_path = "/Users/User/My Drive/Oscar/USG_submissions/regulations-comments-downloader-1"
 ###############################################################
 # Are you running this script from the command line?
 # If not, please set 'is_command_line' to 'False' and provide the docket ID below
@@ -234,7 +234,7 @@ def get_allComment_details(comment_links, document_links, folder_path, docket_id
     try:
         # Loop through all documents
         for link in document_links:
-            p = re.compile("[^\/]+$")
+            p = re.compile("[^/]+$")
             m = p.search(link)
             doc_id = m.group()
 
@@ -252,7 +252,7 @@ def get_allComment_details(comment_links, document_links, folder_path, docket_id
 
         # Loop through all comments
         for link in comment_links:
-            p = re.compile("[^\/]+$")
+            p = re.compile("[^/]+$")
             m = p.search(link)
             comment_id = m.group()
 
