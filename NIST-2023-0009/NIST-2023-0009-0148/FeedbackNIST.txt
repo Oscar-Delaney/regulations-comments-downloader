@@ -1,0 +1,150 @@
+On Datasets and their Regulation
+
+by Alex J. Champandard
+
+
+Training data is at the root of all problems in the AI space: from economic explotation
+(Copyright), to human rights violation (privacy), including criminal offenses (training
+on child abuse).  The field of AI is suffering from an incredible imbalance of powers
+between corporations and regulators.
+
+Corporate interests are years ahead in their technical and legal strategies; they are
+qualitatively better equipt to play a regulatory game of tiger and mouse. There's
+nothing inherently wrong with existing regulation in theory, but unless a active role
+is played to ensuring their functioning, it only provides administrative hassle while
+barely achieving set goals.
+
+This comment explains the problems through a case study of Hugging Face: a platform
+which hosts machine learning datasets and models. From this, I'll cover how legal
+strategies are used to establish plausible deniability and shift liability, to the
+point where no regulations are followed and potential fines would be the cost of doing
+business.  Then finally, I'll make suggestions for policy — including how proactive
+prosecutors are necessary to investigate data rights violations when they reach
+criminal status (e.g. commercial-scale infringement, dissemination of illegal content).
+
+
+I. CASE STUDIES
+
+1) DataComp (privacy)
+
+https://huggingface.co/datasets/mlfoundations/datacomp_pools
+
+A dataset with 12B links to images and descriptions, many of which contain people's
+faces and names.  The dataset is hosted in a versioned repository format with history,
+which makes it impossible to remove things to comply with privacy laws (removal).  It's
+hard to search and difficult for U.S. citizens to identify if they're in the dataset.
+This dataset is hosted by a non-profit shell that provides the data for corporations to
+exploit without restrictions or consequences.  Authors are unresponsive whes prompted
+about risks of illegal content.
+
+
+
+2) LAION (csam)
+
+https://huggingface.co/datasets/laion/laion2b-multi
+
+This dataset contained links to illegal child abuse materials.  There are reports in
+the discussion section that were not processed for months.  Even when this was
+escalated, the platform was too incompetent to find the CSAM with standard
+methods.  Investigations were sloppy, and other internal team members (working for the
+platform) had knowledge of the CSAM a year prior.  When the CSAM was independently
+confirmed, the platform was informed 4 weeks before and took no action until the press
+coverage was imminent.
+
+
+3) Storyteller (derivatives)
+
+https://huggingface.co/mosaicml/mpt-7b-storywriter
+
+Machine Learning models on this platform are normally released with licenses to match
+the datasets they are tuned on. However, MosaicML released a model that was
+intentionally fine-tuned on Copyrighted books without respecting the rights of
+the authors.  Reports of infringement (e.g. problematic licensing) are not processed
+nor is there any legal argument made why relicensing a model that is able to serve
+as a compressed database of the original works is legal.
+
+
+4) OBELICS
+
+https://huggingface.co/datasets/HuggingFaceM4/OBELICS
+
+This dataset includes full text from select websites and did not respect any opt-out
+instructions (required as minimum threshold for international best practices) specified
+in Terms of Service.  Furthermore, the dataset distributes the Copyrighted materials
+directly — and the required redistribution rights (per Berne Convention) are not
+included as Copyright exceptions.  The team creating the dataset are employees of the
+platform hosting it, which profits from having these models available by selling
+compute "inference" and other memberships.  The DSA safe harbour does not apply due to
+these commercial incentives.  They attempt to use dataset Terms Of Service to pass the
+liability on to users of the dataset.
+
+
+5) Anime 400k
+
+https://huggingface.co/datasets/davidchan/anim400k
+
+This dataset includes commercially available works (anime films) that are not from the
+open web, but likely extracted from pirated versions of the videos.  This is direct
+hosting of illegally acquired image content that's by third-party  rightsholders, using
+a gating system and license to attempt to pass on the liability.
+
+
+6) Danbooru Scrape
+
+https://huggingface.co/datasets/animelover/danbooru2022
+
+This dataset contains copies of images hosted on another website with anime and often
+sexualized content.  There is speculation that some images are illegal (cartoon
+depictions of CSAM) in many jurisdictions.  Further, hosting copies of images does
+not typically fall under any Copyright exception per international law, and there is
+no way to opt-out of this dataset due to the revision-control of the repository.
+
+
+7) Game Voice Actors
+
+https://huggingface.co/datasets/litagin/moe-speech
+
+A dataset of 368Gb of data ripped directly from video games and redistributed as is.
+The uploader cites an incorrect  interpretation of Japanese law as the legal basis for
+his right to redistribute the content. (Copyright only grants exceptions for the right
+to create reproductions but not for distribution!)
+
+
+II. THE PROBLEMS
+
+As a root cause analysis of the case studies above, the following come up regularly:
+
+- not acknowledging reports made by users
+- setting up channels for legal issues that are not monitored
+- denying the problems even if they are acknoweldged
+- claiming there's legal uncertainty in media coverage
+- jurisdiction dodging (offices in U.S. and EU)
+- confounding responsibilities within the team
+- compartmentalization to reduce liability
+- the complexity of systems that makes compliance hard
+- non-compliance of the hosting solution (designed that way)
+- malicious compliance with infringement and privacy requests
+
+These tactics form the basis of modern data laundering, which regulators are poorly
+equipped to deal with.
+
+
+III. SOLUTIONS
+
+a) There needs to be follow-up actions from previous consultation with rightsholders.
+Safe Harbor laws under Copyright are being abused by platforms that don't qualify.
+
+b) Create a service within an existing agency (no labor required, only technical
+solution) to easily send copies of complaints / requests sent to a platform.  This can
+be a web form or email that can be CC'd as a witness — to avoid plausible deniability.
+
+c) Mandate the platforms regulatly make a legally binding statements that nobody in the
+company is aware of illegal content, in order to prevent compartmentalisation and
+plausible deniability for avoiding liability under the law.
+
+d) Work with other agencies to clarify the forms of content that are clearly illegal,
+and for those forms where it's unknown, actively seek to obtain clarity from the
+Supreme Court itself.
+
+e) Ensure transparency and reporting for AI & ML companies is designed to address the
+root cause problems identified above.
