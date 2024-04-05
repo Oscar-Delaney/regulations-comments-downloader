@@ -1,0 +1,50 @@
+I appreciate the opportunity to provide a comment on this incredibly important matter.
+
+I believe that the attached paper is particularly valuable to consider given the RFC, and I've shared below a few of the questions that it answers, with the page numbers and a short summary, though the entire paper has much more to offer.
+
+Q1. How should NTIA define "open" or "widely available" when thinking about foundation models and model weights? (1a, 1b, 1c, 1d)
+
+- Pages 9-10, Section 2.2 "Open-Source AI: Definition and Disanalogy"
+- The paper explains that the open-source software definition does not translate directly to AI due to differences in how AI systems are built. For AI systems, "source code" can refer to various components (described in Table 1) that can be shared independently.
+- Page 11, Box 1 "Further research is needed to define open-source gradients"
+- The paper emphasizes the need for a collaborative effort to define fine-grained standards for when AI model components should be released, based on an understanding of the risks posed by releasing different combinations of model components.
+
+Q2. How do the risks associated with making model weights widely available compare to the risks associated with non-public model weights? (2a, 2b, 2c, 2d)
+
+- Pages 12-16, Section 3.1 "Malicious Use"
+- Open-sourcing a model allows actors to run the model without safety filters, fine-tune the model to enhance dangerous capabilities, and aid adversarial actors in effectively jailbreaking system safeguards. The paper discusses potential risks such as influence operations, surveillance, scamming, cyber attacks, and biological/chemical weapons development.
+
+Q3. What are the benefits of foundation models with model weights that are widely available as compared to fully closed models? (3a, 3b, 3c)
+
+- Pages 17-20, Section 4.1 "External Model Evaluation"
+- Open-sourcing enables independent model evaluations by wider communities of developers, helping to catch bugs, biases, and safety issues that may otherwise go unnoticed. This external oversight can lead to better performing and safer AI products.
+- Pages 21-25, Section 4.2 "Accelerate (beneficial) AI Progress"
+- Open-sourcing allows more people to contribute to AI development processes, enabling large-scale collaborative efforts. More expertise, diverse perspectives, and human creativity put into AI development can drive innovation in new and useful downstream integrations, advance AI safety research, and help push forward the boundaries of AI capability.
+- Pages 26-28, Section 4.3 "Distribute Control Over AI"
+- Open-sourcing foundation models can help distribute influence over the future of AI away from major labs by empowering smaller groups and independent developers. This "democratization of AI" gives more people influence over how AI is developed, optimized, and used, promoting the representation of diverse interests and needs.
+
+Q4. Are there other relevant components of open foundation models that, if simultaneously widely available, would change the risks or benefits presented by widely available model weights? If so, please list them and explain their impact.
+
+- Page 48, Appendix A "AI Model Component Guide"
+- The paper provides a detailed breakdown of standard model components and their definitions. Access to different components enables different downstream activities, and the risks and benefits of open-sourcing depend on the specific combinations of model components made publicly available.
+- Page 16, Section 3.2 "Risks from the Proliferation of Unresolved Model Flaws"
+- The risks and flaws of the initial foundation model can propagate downstream when the model is applied to new contexts, altered to enable new capabilities, or combined with other AI models and tools. Previously fixed flaws may also arise in these scenarios.
+
+Q5. What are the safety-related or broader technical issues involved in managing risks and amplifying benefits of dual-use foundation models with widely available model weights? (5b, 5d, 5e)
+
+- Pages 18-20, Section 4.1.3 "Other Ways to Enable External Evaluation"
+- The paper suggests alternative methods to open-sourcing that can facilitate the identification and evaluation of bugs and safety issues with less risk, such as staged-release impact testing, external audits and red-teaming, and bug bounties and safety bounties.
+
+Q7. What are current or potential voluntary, domestic regulatory, and international mechanisms to manage the risks and maximize the benefits of foundation models with widely available weights? What kind of entities should take a leadership role across which features of governance? (7b, 7c, 7d, 7e, 7i, 7j)
+
+- Pages 29-30, Section 4.3.3 "Other Ways to Reduce Corporate or Autocratic Control"
+- The paper suggests options for distributing influence over AI via the democratization of AI governance, such as public participation and deliberation, implementing democratic institutional structures within AI labs, and regulation by democratic governments to restrict unilateral control by private labs.
+
+Q8. In the face of continually changing technology, and given unforeseen risks and benefits, how can governments, companies, and individuals make decisions or plans today about open foundation models that will be useful in the future? (8b, 8c)
+
+- Pages 30-34, Section 5 "Recommendations"
+- The paper provides recommendations for developers, standards setting bodies, and governments to establish safe and responsible model sharing practices. These include recognizing that some highly capable models may be too risky to open-source, conducting rigorous risk assessments, considering alternative model sharing options, defining fine-grained standards for model component release, and government oversight and enforcement of safety measures.
+
+Q9. What other issues, topics, or adjacent technological advancements should we consider when analyzing risks and benefits of dual-use foundation models with widely available model weights?
+
+- The entire paper provides relevant information to this broad question, covering various aspects of the risks, benefits, and implications of open-sourcing highly capable foundation models, as well as policy and regulatory recommendations.

@@ -1,0 +1,90 @@
+﻿Hello!
+
+
+I am someone who has been entrenched in the open source generative art/image scene for I would say the past two years, so most of what I'm referring to is focused on that. Naturally I can't give answers to every question but I'll try my best where I feel I can give good input.
+
+
+
+
+1d. So in this case we would be referring to Midjourney and Dalle for examples of models that are accessed via API and something like Stable Diffusion as something running on a local machine. From a creative standpoint I feel that Midjourney and Dalle are somewhat dead ends. For something being made to have value, it requires putting a bit of yourself into it, which is something that an API doesn't really allow. At best you can do prompts and that’s the only input that has real impact, whereas if something is running on a local machine not only can you control just about every aspect of the process, you can also decide what models and what weights you are comfortable with. If Midjourney decides to train on something I dislike (for example, overtraining on a particular artist to the point it looks like it's copying them) there's nothing I can do about it, where with open weights I can take some kind of action.
+
+
+I think what's important is that open approaches allow for more personal responsibility. "I did this”, instead of "I caused something I can't fully understand or control to do this".
+
+
+
+
+2c. The Issue with privacy for me more has to do with how the data is being obtained to train versus what the model outputs. At least with open source you have an idea of what's in it but with closed source it's hard to say. A company using people's personal data to train for example is something to keep an eye on.
+
+
+Though maybe i'm missing something here. 
+
+
+2e. People aren't going to stop using and building open weights. More likely If they can't do it here they'll instead go to somewhere that will be more accepting of them, and where they go might not share the values you do. 
+
+
+3. Control and transparency. I know what's in it, I can control what it can and can't do, I can make tools with it that can be immensely more useful than an AI used via API. Nobody is making decisions of morality and what is right and wrong on my behalf, it cannot be censored on someone's whim.
+
+
+3a. Open weights is what allows competition to exist for AI at all, otherwise it's only accessible to people who can afford the compute to do it. As for innovation, what I think is special about AI is that its core principles are agnostic to what it’s being used for. So something like good practices and terminology for something like training a language model also can be applied to an image model or any other type, which means that multiple professions are cross pollinating knowledge, creating novel approaches for all involved. It elicits a cooperative style I haven’t seen anywhere else. Programmers and Scientists have always had a very open source ethos, but to see that  applied to art, which has traditionally been restricted due to copyright and the difficulty of creation, is something very special to me. 
+
+
+
+3d. Having open weight models is absolutely imperative for free speech. A company or any entity having the power to dictate what people can and cannot make is not acceptable and is vulnerable to abuse. Outside of things that would cause harm (things that you shouldn’t make anyways, AI or not), as much as we can include ought to be included.
+
+
+5d. No, you don't even need internet access to use them. And honestly this is not the way to go about it. Any attempt would likely be extremely invasive and cause backlash. Like I can't emphasize enough how much of a poor decision it would be to try and do this. 
+
+
+6a. Microsoft's failed attempts to curtail Linux and the 1976 Arms Export Control Act (AECA) attempts to criminalize cryptography (the "crypto wars'') are both pretty good points of reference. The fears of the latter are similar to AI, and in the end cryptography became legal. 
+
+
+6b. I don't think it's much different compared to closed source. Only difference being that open source can be applied in more abstract ways.
+
+
+6c. From my experience most people use models that have more or less no license or the most open license possible. So far the only example I know of a licensed model is Stable Cascade which turned out to be a flop. But the history of AI models is brief and maybe that will change in the future. We just don't have a lot of examples to work off of.
+
+
+7a. Again this is not the way to go about it.
+
+
+7c. As compared to using a closed model? In any case if you're making something in the likeness of an actual person it should be known it is AI generated, if that's what you're asking.
+
+
+7d. I think it would be better if these were decided by the community. the government either overshooting or undershooting wouldn't be surprising because they might not know enough to "read the room", versus others who engage with AI perpetually and could make a better call. 
+
+
+7e. How it is currently I'm ok with, though of course any model that is made specifically to do something malicious should be removed.
+
+
+7f. If the government wants to use AI or is making an AI model then yes a higher standard needs to be applied since if they abuse it that's magnitudes more dangerous.
+
+
+7j. When it comes to something like the news or police I don't entirely trust them to not abuse AI if they have access to it. If it’s something with a lot of overreach like these some caution is understandable.
+
+
+
+
+Some misc thoughts
+------------------------
+
+
+- Closed source models will likely have more access to resources, which could lead to a monopoly-like situation. It's not entirely unbelievable to imagine Open-AI and other companies of the sort are currently trying to posture themselves into this position, similar to Apple. Partly why I decided to comment is because it's rumored that Sam Altman is lobbying in Washington for regulation? Regardless, I just want it known that you should take what he says with a grain of salt, he has a direct financial interest in suppressing open source (killing the competition).
+
+
+-To me a more reasonable approach would be to go for bad actors and not the models themselves. They’re just tools, and dictating their use will likely be ineffective or cause people who are passionate about this stuff to go somewhere where they can work on it with less difficulty. At least with LLM’s I can understand the concern since it can give answers and instructions on how to do something. But with image generators I feel the fear about them is overblown, and makes the assumption that the general public won’t get increasingly more AI savvy.
+
+
+-It’s my personal belief that as long as you are not directly trying to copy another artist’s style in the final out, using a model of that artist or a model that uses that artist in its dataset is acceptable. Some may claim it’s copyright infringement but if it is generating output that you cannot associate with a specific artist by just looking at it, then I disagree. I believe that the use of copyright to hinder the ability to train models is not the way to go, and we should not make copyright any stronger than it already is. I don’t want to see a youtube situation.
+
+
+-Don’t expect companies to play fair.
+
+
+
+
+
+
+
+
+I hope this was helpful on some level!

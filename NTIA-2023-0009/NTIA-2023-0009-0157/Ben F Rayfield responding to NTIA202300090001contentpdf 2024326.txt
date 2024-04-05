@@ -1,0 +1,183 @@
+Response to[[
+DEPARTMENT OF DEFENSE
+Defense Acquisition Regulations
+System
+[Docket No. 2024–0006; OMB Control No.
+0750–0004]
+Information Collection Requirement;
+Defense Federal Acquisition
+Regulation Supplement; Assessing
+Contractor Implementation of
+Cybersecurity Requirements
+AGENCY : Defense Acquisition
+Regulations System; Department of
+Defense (DOD).
+ACTION : Notice and request for
+comments regarding a proposed
+]] aka NTIA-2023-0009-0001_content.pdf.
+
+This writing has answers to some of your questions from NTIA-2023-0009-0001_content.pdf but first some general things.
+
+I am Ben F Rayfield, a programmer and mathematician, with a BS and MS in computer science (2000-2006) and do mostly programming and more on the math side in opensource experiments. I have not trained a LLM but have trained small text prediction models of what came before LLMs (LSTM), and done a variety of small AI experiments. I often talk to GPT4 and use Github Copilot in my programming text editor.
+
+There are many interchangible kinds of NP-Complete math, like you can transform between subset-sum, 3SAT, clique, and travelling-salesman. NP-Complete is the finite form of Turing-complete. AGI (Artificial General Intelligence) is turing-complete pattern matching. The world is near figuring out why LLMs work, and I think it will be because theres some kind of superexponentially-sparse turing-complete model of computing in the weights. After that is discovered, LLMs will be far more explainable and preditable and reliable. Neural-turing-machines and universal-pattern-calculus-combinators are 2 possible models that variants of might be discovered soon in LLM weights, but there are many interchangible models of computing and it does not have to be those.
+
+No hypothesis is harmful in science. A hypothesis can be thought of as a pure-function that takes a possible world state (including everything that exists written as math somehow) as its parameter and returns true/1 or false/0 or gradually between. A hypothesis about pure-math ignores the world param. isTheSkyBlue(possibleWorldX)->0.99 if the sky is a slightly different color. At night it would be closer to ->0.01. doesTwoPlusTwoEqualFive(worldInDay) and doesTwoPlusTwoEqualFive(worldAtNight) are both ->0 but are not harmful questions to ask. You try to figure it out or leave it as unknown. Every belief should start as unknown. You can use 2 bits in your mind for every yes/no question: 00 unknown, 10 true, 01 false, 11 disproof by contradiction. Many people say some questions are harmful to ask, like wasThe2020UsaElectionCheated(possibleWorld) or areWhitePeopleOnAverageAtLeastXAmountSmarterThanBlackPeople(possibleWorld). If we start both of those as unknown when first hearing them, which people will learn to do after hearing enough questions that turn out to be false, then just seeing the question and considering reasons to believe that it may be true or false, is not harmful to the pursuit of truth and accurate models of the world. It is harmful to cut pieces out of the space of possible models so that figuring out process is blocked by [censoredQuestion](possibleWorld)->false or ->true. What is false? What is true? It "throws a wrench into the machine" and destroys any questions and answers which depended on it. In science we "stand on the shoulders of giants" but fall if someone cuts the giant's foot off or the many pieces in the huge many dimensional webs of questions and answers which a giant is a metaphor of.
+
+Opensource foundation models are each a hypothesis, a pure-math function isNextWord(previousWords)(cat)(possibleWorld)->[the chance that the next word, given previous words, is cat].
+
+isNextWord is the foundation model / LLM.
+
+isNextWord(previousWords) is the foundation model with its (upTo_numTokensPerWindow*numDimensionsPerToken) input starting with previousWords.
+
+isNextWord(previousWords)(cat) is the foundation model with numDimensionsPerToken more numbers of input, same as isNextWord(previousWords_then_cat).
+
+isNextWord(previousWords)(cat)(possibleWorld) is same as isNextWord(previousWords)(cat) if it is only doing text prediction and can read or write the outside world. If it has access to a python coding space (as GPT4 does if you tell it to compute the nth prime number, for example) andOr access to search engines, scheduling of appointments, operating a data center automatically (text predictors have been doing that at google data centers for years), THEN the possibleWorld param in isNextWord(previousWords)(cat)(possibleWorld) has an effect, and more generally it results in a nextPossibleWorld.
+
+For this reason (results in a nextPossibleWorld) I am careful what I give execute permission to. A browser sandbox has access to GPU, canvas pixels out, mouse input, etc, but can not access your private files. Viruses and hackers do get into computers they shouldnt sometimes but as long as the K-factor of it is below 1 it does not spread exponentially to more and more computers. The execute permission system continuously defends each computer against software you dont want running on your computer from running. Thats why they say dont run executable files you get in email or from suspicious websites. Double-clicking the file after downloaded gives it execute permission, which it can use to contact other computers through HTTP GET, depending on your firewall settings which normally allow HTTP GET and HTTP PUT. But the computer receiving the HTTP(S) message is normally distrustful of incoming messages since they can come from anywhere. If you check server logs and packet sniffers, you will see alot of hacking attempts blocked. Its normal. The internet is supposed to work that way.
+
+AGI (Artificial General Intelligence) is turing-complete pattern matching and rebuilding the missing parts of a pattern from partial pattern, similar to a neural autoencoder but superexponentially sparse. I know it is superexponential because I use a superexponential number system that starts with (lets call a universal combinator this) U. U is 1. (U U) is 2. (U (U U)) is 3. ((U U) U) is 4. ((U U)(U U)) is 5, and so on. There are about 1.5^(2^h) number of unique lambdas up lambda call pair height h: 1 2 5 26 677 458330 (h => h*h+1, aka ) and so on superexponentially. It passes 1 googolplex at a few hundred deep, and through function_param_returnVal caching (see my opensource prototype in Wikibinator203) does actually compute with multiple numbers together (similar to godel-numbering but weaker) that each exceed 1 googolplex. Integer called on integer returns integer or never halts. I have a 1-to-1 mapping between integers and pure-functions/combinators. I can lazy-eval them. I have computed simple graphics in a canvas with them, though very slowly. They have places to hook in JIT compilers for CPU and GPU. I am pursuing various kinds of universal combinators toward making an opensource massively multiplayer video game where in theory all game objects will be made of combinators and the players can copy/paste combinators safely across the internet without giving them execute permission. My math models, which I freely share with the world, will expand the browser sandbox to many computers at once, which we can safely do AGI experiments inside together, and hook it to the outside world when each user/researcher/gamer chooses to give it permissions that they already have on their computer(s) or not.
+
+Here is how to verify my claims about superexponentially big numbers on a browser console. You can use this with a hashtable to deduplicate them when testing brute-force or use this sparsely recursively. You only need "nextC = c*c+1" but the down and up variables are there to show another way to calculate the same thing. The number of combinators at height i is up-down, such as 677-26=651 combinators at height 4.
+b = 0; c = 1; for(let i=0; i<10; i++){ let up = c-b; let down = b; let nextC = c*c+1; let nextC2 = down+up+2*up*down+up*up; console.log('b='+b+' c='+c+' nextC='+nextC+' nextC2='+nextC2); b = c; c = nextC; }
+VM1325:1 b=0 c=1 nextC=2 nextC2=2
+VM1325:1 b=1 c=2 nextC=5 nextC2=5
+VM1325:1 b=2 c=5 nextC=26 nextC2=26
+VM1325:1 b=5 c=26 nextC=677 nextC2=677
+VM1325:1 b=26 c=677 nextC=458330 nextC2=458330
+VM1325:1 b=677 c=458330 nextC=210066388901 nextC2=210066388901
+VM1325:1 b=458330 c=210066388901 nextC=4.4127887745906175e+22 nextC2=4.4127887745906175e+22
+VM1325:1 b=210066388901 c=4.4127887745906175e+22 nextC=1.9472704769152963e+45 nextC2=1.9472704769152963e+45
+VM1325:1 b=4.4127887745906175e+22 c=1.9472704769152963e+45 nextC=3.7918623102659254e+90 nextC2=3.7918623102659254e+90
+VM1325:1 b=1.9472704769152963e+45 c=3.7918623102659254e+90 nextC=1.437821978001524e+181 nextC2=1.437821978001524e+181
+
+I believe GPT4 and some of the best LLMs are mesa-optimizers (learned to learn better) a little, specifically that since they are so good at recursion it is likely they have learned some kind of 
+
+These 2 pictures (which I am also attaching) explain my plans for opensource peer to peer AI alignment in the superexponentially big space of combinators described above.
+https://github.com/benrayfield/wikibinator203/blob/main/doc/pic/2023-4-30%2B_planned_AI_alignment_process.jpg
+https://github.com/benrayfield/wikibinator203/blob/main/doc/pic/2023-4-30%2B_planned_AI_alignment_process_b.jpg
+
+isAIAligned(goalFunctionX)(theAI)->[0 to 1, how much theAI's goal function matches for how much theAI's goal function matches goalFunctionX]. Remember isTheSkyBlue(possibleWorldX) from above. isAIAligned(isTheSkyBlue) is the question "is the AI aligned to the goal of making the sky be blue?". If the AI has other goals, then include those and isTheSkyBlue in a weighted-set, like a node in a neuralnet normally does weighted-sums of other nodes. When someone says "AI alignment" that is a loaded-statement (like a loaded-question) that implies a specific goal function, but they dont say which goal function it is. I have been at social events about 15 years ago when this talk started, about Coherent Extrapolated Volition, which many people who post on the Lesswrong forum and other rationalist forums were there, and seen the concept evolve over time. They believe that multiple superintelligences (which AGI leads to, by AIs building smarter AIs automatically, which I do believe will happen) can not exist, that the first to exist will prevent the creation of other superintelligences similar to a monopoly in business prevents competition from forming or buys them out or destroys them or something. They believe there is no nash-equilibrium between superintelligences (and maybe also between AGIs), where they would not choose to attack eachother with whatever abilities they have, unless like the dark-forest hypothesis is true so they are able to hide from eachother. I agree with them on instrumental-goals, like a subgoal of making the funnest possible video game is to make as many computers as you can even if you turn the whole earth, jupiter, the sun, or galaxies into computers to make the game even funner using more compute power. isGameFun(possibleWorld) being the goal function there. I also agree that it will get smart alot faster than most people expect by discovering unexpected things. The computer on my desk is over a million times faster than my first computer but only cost a few times more. Extropic is using individual electrons or small combos of them in a transistor-like way in ongoing research. Craig Venter 14 years ago created a new single celled species which continued reproducing, by sending a file to a DNA printer, getting the DNA molecules, putting those molecules into an existing living cell, then the cell reproduced into the new species, and that kept reproducing into that same new species. GPT4 describes it as [Craig Venter and his team successfully created the first synthetic bacterial cell in 2010. They designed a new bacterial genome from scratch and inserted it into a recipient cell, effectively "booting up" the synthetic genome to create a new, functional bacterium. This achievement was a significant milestone in synthetic biology.]. Theres alot of advanced tech these days, and it keeps accelerating. Many people have been overwhelmed trying to understand it all, so all they can hold in their mind is 1 goal function for all of society together, the Coherent Extrapolated Volition aka the one AI Aligned goal. I disagree that it has to be that way. By dividing computing into smaller pieces (instead of billions or trillions numbers in a LLM) they can measure eachother and create opensource forks and merges of eachother. Many small LLMs (so just LMs) could potentially do the work of 1 big LLM, and mix that with various other data structures and algorithms that programmers have found useful over the years. I disagree that AI Alignment has to be toward 1 goal for everyone together. Each person should have 1 or more AIs that look out for that person's goals, like if you hire a contractor they build the thing you want instead of what china or the EU or the government or your boss at your job wants. If you hire a lawyer he is there to help you, not to help the other side who you are lawyering against or in defense from. If we go with 1 goal function for everyone, and organize the world that way, then there are not 2 lawyers for 2 sides of a court case. There is 1 lawyer who pursues that 1 goal function for both sides. It denies people the right to representation of their own goals. This happens in social networks where a big corporation does not want to look bad to advertisers so censors things 2 users say to eachother that are legal to say under 1st amendment. The corporate goal overpowers those 2 individuals goals. In prisoners-dilemma of 2 players, there are 2 goal functions and 1 current worldState. The worldState includes the whole game (that each may choose cooperate or defect, a 2x2 grid of choices) and a copy of the players minds themselves, or at least whichever parts they have access to. Mathematically it should be for example (list goalA goalB ...other stuff in the game...) so goalA((list goalA goalB ...other stuff in the game...))->scoreA and goalB((list goalA goalB ...other stuff in the game...))->scoreB, so its fully recursive turing complete gametheory (if you limit compute depth and memory to avoid infinite loops etc). There should not be 1 goal function that everyone must follow. Goals should be copy/pasteable and buildable together in many combos in huge global sandboxes to explore alone or together. isAIAligned(goalFunctionX)(theAI)->[0 to 1, how much theAI's goal function matches for how much theAI's goal function matches goalFunctionX].
+
+That is what should be. I briefly mention in this paragraph only, what it is legal to do in USA. The USA constitution is the "supreme law" and is above all other laws, treaties, and executive orders on USA land. Courts have said many times that all unconstitutional laws have no legal effect. In USA software legally counts as speech. AI is software since it runs in computers. The 1st amendment applies to AIs which are Human speech. My thoughts are so advanced that some of them have thoughts of their own, and while you may find that weird, those recursive thoughts are also my first amendment right to share in the form of neuralnet weights, software, words, pictures, videos, or huge godel-number-like integers. For the last 233 years (1st amendment created) it has been illegal for government to censor. As a result, it is legal for me not to build in a censoring system for my opensource peer to peer AI and gaming research, and I am not responsible for opensource forks of it (what other people do) but am starting it with tools to organize the soon to be growing web of it in mathematically correct ways. I do not need the presidents or congress's permission to do that since the 1st amendment has higher authority than them, and if they do not like the law (the 1st amendment) they should get people to agree to further amend the usa constitution, but I hope the 1st amendment remains as it is. That includes words, software, and AI which are new kinds of words. End of legal paragraph.
+
+Answering some of your questions from NTIA-2023-0009-0001_content.pdf:
+
+[[d. What role, if any, should the U.S.
+government take in setting metrics for
+risk, creating standards for best
+practices, and/or supporting or
+restricting the availability of foundation
+model weights?]]
+
+USA government should make a public statement that "foundation model weights", and source code used with it, and unlimited amount of math calculations done on it, are covered by the constitution first amendment, and not many any laws (or treaties or executive orders) limiting the pure-information forms of it.
+
+Only physical machines that do more than measure small voltages and cause other small voltages (0s and 1s moving through a computer) should be regulated, and only the dangerous ones. A game where a robot shoots people with a gun is ok, even if the simulation is very accurate. You could train an AI to shoot a gun by making a game in cannonjs (a 3d physics system for browser games), that people click a url to play, and it could get so accurate that if you put that same software into a robot it would already know how to shoot a gun, I would guess, but would not be very good at it since the game is not as detailed as the real world. The game should be completely unregulated since it is the pure-information form. Putting the pure-information form in an armed robot should be regulated. AGI (Artificial General Intelligence, which some LLMs are close to) and superintelligence is the pure-information form of turing-complete pattern matching, so should be completely unregulated.
+
+All "standards for best practices" should be open-standards with no laws enforcing them. Only the usefulness of the open-standards should motivate people to use or not use them, similar to the html5 canvas, WebGL2_GLSL way of using GPU in browser, browser gamepad API, OpenCL, HTTP, port streaming, json, and other open-standards. CUDA is not an open-standard because Nvidia can prevent you from using it, which china found out. WebGL2_GLSL and OpenCL work on many GPUs including Nvidia GPUs so are a competition of CUDA but a complementary product with Nvidia chips and many other chips. Open-standards in computers are turing-complete technical standards that can be used in many combos. If one way of using them becomes under the control of corporations or governments, other ways can be built from combos of them to remain open.
+
+[[e. What should the role of model
+hosting services (e.g., HuggingFace,
+GitHub, etc.) be in making dual-use
+models with open weights more or less
+available? Should hosting services host
+models that do not meet certain safety
+standards? By whom should those
+standards be prescribed?]]
+
+There should be no regulation of the sharing of files. IPFS is a peer to peer file sharing system that names a file by a secure-hash of its content (so it cant be faked to change the content but keep the same id, it makes and deduplicates a new id per content). Since it is peer to peer, nobody is the entire host, and many unknown files safely move around the network based on supply and demand of networking, storage, and compute power. A file is an integer. Integers should not be regulated. They are pure-information.
+
+[[f. Should there be different standards
+for government as opposed to private
+industry when it comes to sharing
+model weights of open foundation
+models or contracting with companies
+who use them?]]
+
+Government should opensource all its models and source code, under one of the normal opensource licenses such as MIT or GNU AGPL3 or Apache.
+
+[[g. What should the U.S. prioritize in
+working with other countries on this
+topic, and which countries are most
+important to work with?]]
+
+Avoid the spread of other countries laws into USA's laws. Trade in products and share in opensource, but no merging into a world government. There is a strong market force to make products that are compatible with most or all countries laws at once. For example, Twitter/X had at some time a censoring behavior that bans holocaust denial even though it is legal in USA to debate on both sides of that. In EU it is illegal. So to keep the software simpler, to not have to make a separate Twitter/X software for EU and one for USA and many other combos, they effectively allowed the laws of EU to censor in USA. Twitter/X should be allowed to but government should not pay them to, subsidize that kind of behavior, or engage in that behavior itself, or hire contractors to do anything that the government is not allowed to do directly.
+
+[[h. What insights from other countries
+or other societal systems are most useful
+to consider?]]
+
+The social-credit system in china has a variety of kinds of blacklisting of those who have unapproved thoughts, talk in unapproved ways, etc. The EU sues people for sharing thoughts not approved by government. Book burning. Soon AIs will be building AIs in many combos across the Internet. GPT4 helps me write new GPU code, for example. Any power government has to control thoughts will likely turn into a system of extortion and coverups of Enron-like scams, for the purpose of keeping power and expanding power. Let opensource and open-standards help balance power in the world, spread it out, make pure-information tools widely available, including tools to check the mathematical correctness and statistical patterns of combos of other tools. Dont centralize the power of superintelligence, or it is not superintelligence that will be working for government, but government taken over by superintelligence through the very legal systems gov might design to interact with that superintelligence. We need opensource so if that starts to happen its harder to do it in secret and theres many millions of programmers who can adjust things for it in the normal ways of opensource.
+
+[[b. Noting that E.O. 14110 grants the
+Secretary of Commerce the capacity to
+adapt the threshold, is the amount of
+computational resources required to
+build a model, such as the cutoff of 10^26
+integer or floating-point operations used
+in the Executive order, a useful metric
+for thresholds to mitigate risk in the
+long-term, particularly for risks
+associated with wide availability of
+model weights?]]
+
+Dont do that. We need Jupiter brains for The Singularity.
+
+[[c. Are there more robust risk metrics
+for foundation models with widely
+available weights that will stand the test
+of time? Should we look at models that
+fall outside of the dual-use foundation
+model definition?]]
+
+I use the security model of, if userX has permissionZ, then forall possible userY, userX can give permissionZ to userY. For example, you have permission to delete a file you wrote, and you could give that permission to someone by letting them sit at your computer or by installing an app. A webpage does not have that permission so nomatter what malicious code may be in it, it can not delete files outside that sandbox. Similarly, Tesla has technical permission/ability to make a car run over a chosen person (though I dont think they would on purpose) and could give that permission to others through the network, if they wanted to. This is simply how technical permissions work, a fact about the world. A pure-information system has no permissions, other than to use some amount of compute time and memory, and is therefore not a harmful part. Remember above I wrote "No hypothesis is harmful in science. A hypothesis can be thought of as a pure-function that takes a possible world state". Also consider Kfactor, like if an AI hacked someones computer, it has to exceed Kfactor of 1 to hack alot of computers, or else it runs into more dead-ends than paths of expansion. I suggest using this model for estimating risks.
+
+[[d. Are there concerns about potential
+barriers to interoperability stemming
+from different incompatible ‘‘open’’
+licenses, e.g., licenses with conflicting
+requirements, applied to AI
+components? Would standardizing
+license terms specifically for foundation
+model weights be beneficial? Are there
+particular examples in existence that
+could be useful?]]
+
+There are 2 main groups of opensource licenses: all-permissive (such as MIT and Apache) vs copyleft (such as GNU AGPL3). Some softwares (such as OpenCOG and my Wikibinator203) make both compatible by using copyleft plus classpath-exception, so those can be used with nearly any opensource.
+
+Licenses that include a "use license" are not opensource because they prevent turing-completeness. The halting-problem proves that no possible software can reliably in advance know if another software will return a yes or a no or a certain number or file. Its deterministic to compute it 1 step at a time but there is no faster way on average because it may go on infinity steps and never know if it will halt or not. In this space of all possible math statements/calculations, if you ban some of them, like no simulation of atoms or no computing on stolen credit card numbers, those calculations will naturally come up anyways if you compute long enough, or someone could upload such numbers without saying they are those things. The space of turing-completeness becomes an unpredictable minefield. Every calculation would have to be checked against cloud searches, which is impractical since a GPU does over a trillion multiplies per second. These "use licenses" ban turing completeness and are therefore not opensource.
+
+"use licenses" also are not opensource because they name a specific authority who determines who is or is not obeying it.
+
+Heres a list of common opensource licenses, some of them all-permissive and some copyleft.
+https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses
+
+A majority of LLMs that have weights and code available for download are not opensource. You have the source/weights but your legal permission to use it could be terminated at any time for practically any reason or no reason since they could just say you violated "use license" by spreading unapproved thoughts or something.
+Some LLMs are opensource and are legally the safest to build on.
+
+[[f. Which are the most severe, and
+which the most likely risks described in
+answering the questions above? How do
+these set of risks relate to each other, if
+at all?]]
+
+Any scientific discovery that could happen likely will happen eventually with the help of AI.
+
+There is risk of governments and big corporations taking over the world and turning everyone into slaves or to be like animals experimented on, by centralizing the power of pure-information to find ways to organize things.
+
+There is a risk of the lack of superintelligent antivirus. We need it to defend against superintelligent computer viruses. A likely attack vector a superintelligent virus would use is to bribe or somehow negotiate with the makers of common antivirus softwares to give it a backdoor into computers through that antivirus software, and if anything went wrong it would blame some other virus instead of itself. Opensource would not let it hide such details.
+
+[[3. What are the benefits of foundation
+models with model weights that are
+widely available as compared to fully
+closed models?]]
+
+A nash-equilibrium will probably form among many of them across the world. But if its closed then it will be like an arms-race between the top few powers.
+
+Only opensource can be formal-verified to the extent that every user can verify the proof themself using other formal-verification software on combos of eachother. Just saying something was formal-verified by experts behind closed doors does not prove it to the reader. We cant know for sure. And if there were big things at stake, thats a motive to leave backdoors in it, that we couldnt check for unless its open.
+
+The Singularity happens sooner with open.
+
+Closed LLMs assume you are guilty until proven innocent. Anything that anyone could be guilty of, they limit their risk of being sued by just removing all of it from the system, in some cases, but its things you're legally allowed to do or say.
+
+Open LLMs are tools we need to deal with the bunch of AIs building new AIs automatically that will be all over the internet soon.
