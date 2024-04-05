@@ -3,6 +3,8 @@ import os
 from PyPDF2 import PdfReader
 from openai import OpenAI
 
+# Takes roughly a third of a cent and 10 seconds per pdf to summarize.
+
 # Initialize the OpenAI client
 client = OpenAI()
 client.api_key = os.getenv("OPENAI_API_KEY")
@@ -46,7 +48,7 @@ def main():
     df['GPT_summary'] = ''  # Add a new column for GPT summaries
     
     # Summarize PDFs and update the DataFrame
-    for subfolder_name in os.listdir(submissions_folder):
+    for i, subfolder_name in enumerate(os.listdir(submissions_folder)):
         subfolder_path = os.path.join(submissions_folder, subfolder_name)
         if os.path.isdir(subfolder_path):
             pdf_files = [f for f in os.listdir(subfolder_path) if f.endswith('.pdf')]
@@ -56,10 +58,13 @@ def main():
                 # Proceed only if 'organization' column is not blank for this row
                 if not row_index.empty and pd.notna(df.at[row_index[0], 'organization']):
                     pdf_path = os.path.join(subfolder_path, pdf_files[0])
-                    text = extract_text_from_pdf(pdf_path)
-                    summary = summarize_paper(text)
-                    df.at[row_index[0], 'GPT_summary'] = summary
-                    print("next")
+                    try:
+                        text = extract_text_from_pdf(pdf_path)[:40000] # truncate to fit context length
+                        summary = summarize_paper(text)
+                        df.at[row_index[0], 'GPT_summary'] = summary
+                    except Exception as e:
+                        print(f"Error processing file {pdf_path}: {e}")
+                    print(f"{i + 1}/{len(os.listdir(submissions_folder))} done")
     
     # Save the updated DataFrame as a new CSV file
     df.to_csv(new_csv_path, index=False)
