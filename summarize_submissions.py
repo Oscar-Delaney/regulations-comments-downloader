@@ -37,37 +37,76 @@ def summarize_paper(content):
     summary = response.choices[0].message.content.strip()
     return summary
 
+def ensure_path_exists(path):
+    """Check if a path exists and print helpful information if it doesn't."""
+    if not os.path.exists(path):
+        print(f"Path does not exist: {path}")
+        if os.path.isabs(path):
+            print("This is an absolute path. Please verify it's correct.")
+        else:
+            print("This is a relative path. Current working directory:", os.getcwd())
+        return False
+    return True
+
 # Main function to iterate through folders, summarize PDFs, and update CSV
 def main():
-    submissions_folder = r"C:\Users\User\My Drive\Oscar\USG_submissions\regulations-comments-downloader-1\NTIA-2023-0009"
+    # Get the current script's directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Define paths relative to the current directory
+    submissions_folder = os.path.join(current_dir, "BIS-2024-0047")
     csv_path = os.path.join(submissions_folder, "comment_details.csv")
     new_csv_path = os.path.join(submissions_folder, "comment_details_with_summaries.csv")
     
-    # Read CSV into DataFrame
-    df = pd.read_csv(csv_path)
-    df['GPT_summary'] = ''  # Add a new column for GPT summaries
+    # Check if paths exist
+    if not ensure_path_exists(submissions_folder):
+        print("Submissions folder not found. Please check the path.")
+        return
     
-    # Summarize PDFs and update the DataFrame
-    for i, subfolder_name in enumerate(os.listdir(submissions_folder)):
-        subfolder_path = os.path.join(submissions_folder, subfolder_name)
-        if os.path.isdir(subfolder_path):
+    if not ensure_path_exists(csv_path):
+        print("CSV file not found. Please check the path.")
+        return
+    
+    try:
+        # Read CSV into DataFrame
+        df = pd.read_csv(csv_path)
+        df['GPT_summary'] = ''  # Add a new column for GPT summaries
+        
+        # Get list of valid subfolders
+        subfolders = [f for f in os.listdir(submissions_folder) 
+                     if os.path.isdir(os.path.join(submissions_folder, f))]
+        
+        print(f"Found {len(subfolders)} subfolders to process")
+        
+        # Summarize PDFs and update the DataFrame
+        for i, subfolder_name in enumerate(subfolders, 1):
+            subfolder_path = os.path.join(submissions_folder, subfolder_name)
             pdf_files = [f for f in os.listdir(subfolder_path) if f.endswith('.pdf')]
+            
             if pdf_files:  # Check if there is at least one PDF
                 # Find the row index where the 'id' matches the subfolder name
                 row_index = df[df['id'] == subfolder_name].index
+                
                 # Proceed only if 'organization' column is not blank for this row
                 if not row_index.empty and pd.notna(df.at[row_index[0], 'organization']):
                     pdf_path = os.path.join(subfolder_path, pdf_files[0])
                     try:
-                        text = extract_text_from_pdf(pdf_path)[:40000] # truncate to fit context length
+                        print(f"Processing {i}/{len(subfolders)}: {subfolder_name}")
+                        text = extract_text_from_pdf(pdf_path)[:40000]  # truncate to fit context length
                         summary = summarize_paper(text)
                         df.at[row_index[0], 'GPT_summary'] = summary
                     except Exception as e:
                         print(f"Error processing file {pdf_path}: {e}")
-                    print(f"{i + 1}/{len(os.listdir(submissions_folder))} done")
+                
+                print(f"Progress: {i}/{len(subfolders)} completed")
     
-    # Save the updated DataFrame as a new CSV file
-    df.to_csv(new_csv_path, index=False)
+        # Save the updated DataFrame as a new CSV file
+        df.to_csv(new_csv_path, index=False)
+        print(f"Successfully saved summaries to: {new_csv_path}")
+        
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        raise
 
 if __name__ == "__main__":
     main()

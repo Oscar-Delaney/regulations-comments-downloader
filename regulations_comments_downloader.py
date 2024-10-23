@@ -130,7 +130,8 @@ def save_attachment(folder_path, attachment):
     name = re.sub(pattern, "", name)
     name = name[0:254]
 
-    file_path = folder_path + name
+    # Use os.path.join for proper path creation
+    file_path = os.path.join(folder_path, name)
     ext = url.split('.')[-1]
     ext = "." + ext
     file_path = file_path + ext
@@ -205,10 +206,11 @@ def get_comment_details(link, api_key, column_names, folder_path, comment_id, co
             attachments.append((att_title, att_link))
 
     if len(attachments) > 0:
-        folder_path = folder_path + comment_id + "/"
+        # Use os.path.join for folder path
+        folder_path = os.path.join(folder_path, comment_id)
         folder_path_exists = os.path.isdir(folder_path)
         if not folder_path_exists:
-            os.mkdir(folder_path)
+            os.makedirs(folder_path, exist_ok=True)
             print("\t[" + str(datetime.datetime.now()) + "] " + "Created folder at: " + folder_path)
         else:
             print("\t[" + str(datetime.datetime.now()) + "] " + "Folder already exists!")
@@ -224,8 +226,8 @@ def get_comment_details(link, api_key, column_names, folder_path, comment_id, co
 
 def get_allComment_details(comment_links, document_links, folder_path, docket_id, api_key, column_names):
 
-    # Try to load previous work
-    previous_work_path = folder_path + "comment_details.csv"
+    # Use os.path.join for file path
+    previous_work_path = os.path.join(folder_path, "comment_details.csv")
     allComments_details, allComments_links = check_previousWork(previous_work_path)
     if allComments_links == None:
         allComments_details = pd.DataFrame(columns = column_names)
@@ -277,10 +279,12 @@ def get_allComment_details(comment_links, document_links, folder_path, docket_id
     allComments_details.to_csv(previous_work_path, index=False)
 
 def setup_folder(baseFolder_path, docket_id):
-    folder_path = baseFolder_path + docket_id + "/"
+    # Use os.path.join to properly handle path creation across different operating systems
+    folder_path = os.path.join(baseFolder_path, docket_id)
     folder_path_exists = os.path.isdir(folder_path)
     if not folder_path_exists:
-        os.mkdir(folder_path)
+        # Create all necessary parent directories if they don't exist
+        os.makedirs(folder_path, exist_ok=True)
         print("[" + str(datetime.datetime.now()) + "] " + "Created folder at: " + folder_path)
     else:
         print("[" + str(datetime.datetime.now()) + "] " + "Folder already exists!")
